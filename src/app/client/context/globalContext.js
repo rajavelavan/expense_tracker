@@ -15,10 +15,11 @@ export const GlobalProvider = ({ children }) => {
       .catch((err) => {
         setError(err.response.data.message);
       });
+      console.log(`Added Income: ${response}`);
     getIncomes();
   };
 
-  const getIncomes = async (params) => {
+  const getIncomes = async () => {
     const response = await axios.get(`${apiUrl}get-incomes`);
     setIncomes(response.data);
     console.log(response.data);
@@ -26,6 +27,7 @@ export const GlobalProvider = ({ children }) => {
 
   const deleteIncome = async (id) => {
     const res = await axios.delete(`${apiUrl}delete-income/${id}`);
+    console.log(`Deleted Income: ${res}`);
     getIncomes();
   };
 
@@ -45,6 +47,7 @@ export const GlobalProvider = ({ children }) => {
       .catch((err) => {
         setError(err.response.data.message);
       });
+      console.log(`Included expense: ${response}`);
     getExpenses();
   };
 
@@ -56,6 +59,7 @@ export const GlobalProvider = ({ children }) => {
 
   const deleteExpense = async (id) => {
     const res = await axios.delete(`${apiUrl}delete-expense/${id}`);
+    console.log(`Deleted Expense: ${res}`);
     getExpenses();
   };
 

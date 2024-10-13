@@ -43,7 +43,7 @@ export default function Form() {
           type="text"
           value={title}
           name={'title'}
-          placeholder="Salary Title"
+          placeholder="Income Title"
           onChange={handleInput('title')}
         />
       </div>
@@ -52,14 +52,14 @@ export default function Form() {
           value={amount}
           type="text"
           name={'amount'}
-          placeholder={'Salary Amount'}
+          placeholder='Amount'
           onChange={handleInput('amount')}
         />
       </div>
       <div className="input-control">
         <DatePicker
           id="date"
-          placeholderText="Enter A Date"
+          placeholderText="Date"
           selected={date}
           dateFormat="dd/MM/yyyy"
           onChange={(date) => {
@@ -76,7 +76,7 @@ export default function Form() {
           onChange={handleInput('category')}
         >
           <option value="" disabled>
-            Select Option
+            Select income category
           </option>
           <option value="salary">Salary</option>
           <option value="freelancing">Freelancing</option>
@@ -92,7 +92,7 @@ export default function Form() {
         <textarea
           name="description"
           value={description}
-          placeholder="Add A Reference"
+          placeholder="Description about this income..."
           id="description"
           cols="30"
           rows="4"
@@ -105,7 +105,7 @@ export default function Form() {
           icon={plus}
           bPad={'.8rem 1.6rem'}
           bRad={'30px'}
-          bg={'var(--color-accent'}
+          bg={'var(--color-accent)'}
           color={'#fff'}
         />
       </div>
@@ -156,7 +156,7 @@ const FormStyled = styled.form`
   .submit-btn {
     button {
       box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-      &:hover {
+      &:hover{
         background: var(--color-green) !important;
       }
     }
