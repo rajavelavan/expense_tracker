@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { InnerLayout } from '../../styles/Layouts';
 import { useGlobalContext } from '../../context/globalContext';
-import Form from '../Form/Form';
-import IncomeItem from '../IncomeItem/IncomeItem';
+import IncomeForm from '../Form/IncomeForm';
+import ItemList from '../ItemList/ItemList';
 
 export default function Incomes() {
-  const { addIncome, incomes, getIncomes, totalIncome, deleteIncome } =
+  const { incomes, getIncomes, totalIncome, deleteIncome } =
     useGlobalContext();
 
   useEffect(() => {
@@ -21,14 +21,14 @@ export default function Incomes() {
         </h2>
         <div className="income-content">
           <div className="form-container">
-            <Form />
+            <IncomeForm />
           </div>
           <div className="incomes">
             {incomes.map((income) => {
               const { _id, title, amount, date, category, description, type } =
                 income;
               return (
-                <IncomeItem
+                <ItemList
                   key={_id}
                   id={_id}
                   title={title}

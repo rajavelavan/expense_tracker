@@ -41,9 +41,9 @@ export const GlobalProvider = ({ children }) => {
   };
 
   //calculate incomes
-  const addExpense = async (income) => {
+  const addExpense = async (expense) => {
     const response = await axios
-      .post(`${apiUrl}add-expense`, income)
+      .post(`${apiUrl}add-expense`, expense)
       .catch((err) => {
         setError(err.response.data.message);
       });
@@ -64,12 +64,12 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const totalExpenses = () => {
-    let totalIncome = 0;
-    expenses.forEach((income) => {
-      totalIncome = totalIncome + income.amount;
+    let totalExpense = 0;
+    expenses.forEach((expense) => {
+      totalExpense = totalExpense + expense.amount;
     });
 
-    return totalIncome;
+    return totalExpense;
   };
 
   const totalBalance = () => {

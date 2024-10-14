@@ -24,7 +24,7 @@ import {
 } from '../../utils/icons';
 import Button from '../Button/Button';
 
-function IncomeItem({
+function ItemList({
   id,
   title,
   amount,
@@ -81,7 +81,7 @@ function IncomeItem({
     }
   };
 
-  console.log('type', type);
+  // console.log('type', type);
 
   return (
     <IncomeItemStyled indicator={indicatorColor}>
@@ -189,4 +189,4 @@ const IncomeItemStyled = styled.div`
   }
 `;
 
-export default IncomeItem;
+export default ItemList;
