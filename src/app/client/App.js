@@ -11,6 +11,7 @@ import { useGlobalContext } from "./context/globalContext";
 
 function App() {
   const [active, setActive] = useState(1);
+  const [profileActive,  setProfileActive] = useState(false);
 
   useGlobalContext();
 
@@ -22,13 +23,11 @@ function App() {
       case 1:
         return <Dashboard/>
       case 2:
-        return <Dashboard/>
-      case 3:
         return <Incomes/> 
-      case 4:
+      case 3:
         return <Expenses/>
       default:
-        return <Dashboard/>
+        return '';
     }
   }
 
@@ -40,7 +39,7 @@ function App() {
     <AppStyled bg ={bg} className="App">
       {orbMemo}
       <MainLayout>
-        <Navigation active={active} setActive={setActive}/>
+        <Navigation active={active} setActive={setActive} profileActive={profileActive} setProfileActive={setProfileActive}/>
         <main>
           {dissplayData()}
         </main>
